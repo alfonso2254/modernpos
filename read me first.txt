@@ -1,0 +1,14 @@
+1) Create a database in phpmyadmin
+2) Import the database inside the db folder into the database you have created
+3) Open config.php and edit database infomation
+4) Done
+
+After setting up Modern POS
+Open the Modern POS config.php file and go to line no 61 define('SUBDIRECTORY', 'modernpos'); 
+Replace With it your Modern POS folder name in htdocs or www
+define(‘SUBDIRECTORY’, ‘FolderNameHere’);
+
+Please ensure the subdirectory value with your Modern POS folder name. Example : define('SUBDIRECTORY', 'dvspos');
+
+Username: avinash@gmail.com
+Password: pandit006

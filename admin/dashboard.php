@@ -217,7 +217,7 @@ include ("left_sidebar.php");
                                 <td><?php echo $row['created_at'];?></td>
                                 <td><?php echo get_the_customer($row['customer_id'], 'customer_name');?></td>
                                 <td><?php echo currency_format($row['payable_amount']);?></td>
-                                <td><?php echo $row['payment_status'] = 'paid' ? '<span class="label label-success">Paid</span>' : '<span class="label label-danger">Due</span>';?></span></td>
+                                <td><?php echo $row['payment_status'] = 'paid' ? '<span class="label label-success">Pagado</span>' : '<span class="label label-danger">Deuda</span>';?></span></td>
                               </tr>
                             <?php endforeach; ?>
                           <?php endif; ?>

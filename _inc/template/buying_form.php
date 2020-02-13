@@ -154,7 +154,7 @@
                 <th class="col-xs-2 text-right">
                   <input type="hidden" name="total_tax" ng-init="totalTax=<?php echo isset($invoice['order_tax']) && !empty($invoice_items) ? currency_format($invoice['order_tax']) : '0.00'; ?>" value="{{ totalTax }}">
                   <input type="hidden" name="total" value="{{ total }}">
-                  <span id="gtotal" ng-init="total=<?php echo isset($invoice['payable_amount']) && !empty($invoice_items) ? currency_format($invoice['payable_amount']) : '0.00'; ?>">{{ total | formatDecimal:2 }}</span>
+                  <span id="gtotal" ng-init="total=<?php echo isset($invoice['payable_amount']) && !empty($invoice_items) ? currency_format($invoice['payable_amount']) : '0.00'; ?>">{{ total | number:2 }}</span>
                 </th>
                 <th class="w-25p"></th>
               </tr>

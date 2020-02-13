@@ -15,10 +15,10 @@ $_['text_payments']									= 'Detalles de pago';
 $_['text_update_success']							= 'Detalles del préstamo exitosamente actualizados';
 $_['text_delete_success']							= 'Detalles del préstamo eliminados con éxito';
 $_['text_loan_paid_success']						= 'Cantidad pagada con éxito';
-$_['text_due']										= 'Due';
+$_['text_due']										= 'Deuda';
 $_['text_total_loan']								= 'Préstamo total';
 $_['text_total_paid']								= 'Total pagado';
-$_['text_total_due']								= 'Total Due';
+$_['text_total_due']								= 'Deuda Total';
 $_['text_recent_payments']							= 'Pagos recientes';
 
 //label
@@ -38,7 +38,7 @@ $_['label_paid_by']									= 'Pagado por';
 $_['button_pay_now']								= 'Pagado ahora';
 $_['button_all']									= 'Todos';
 $_['button_paid']									= 'Pagado';
-$_['button_due']									= 'Due';
+$_['button_due']									= 'Deuda';
 $_['button_disabled']								= 'Deshabilitado';
 
 //error

@@ -231,7 +231,7 @@ if ($order_printer_ids) {
 										<?php echo get_currency_symbol(); ?>
 									</span> 
 									<span class="main-amount">
-										{{ totalPayable | formatDecimal:2 }}
+										{{ totalPayable | number:2 }}
 									</span>
 								</div>
 								<a id="invoice-note" ng-click="addInvoiceNote()" data-note="" title="<?php echo $language->get('text_add_note'); ?>">
@@ -269,7 +269,7 @@ if ($order_printer_ids) {
 											<h4 xng-click="duePaid()">
 												<?php echo $language->get('label_due'); ?> 
 												<span id="dueAmount">
-													{{ dueAmount| formatDecimal:2 }}
+													{{ dueAmount| number:2 }}
 												</span>
 											</h4>
 										</div>
@@ -332,13 +332,13 @@ if ($order_printer_ids) {
 													</td>
 													<td class="product-price">
 														<?php if (get_preference('change_item_price_while_billing') == 1) : ?>
-															<input type="text" class="text-center item_price" id="item_price_{{ items.id }}" name="item_price_{{ items.id }}" value="{{ items.price | formatDecimal:2 }}" data-itemid="{{ items.id }}" onClick="this.select();" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;" style="max-width:80px;padding:5px;border-radius: 20px;border:2px solid #ddd;">
+															<input type="text" class="text-center item_price" id="item_price_{{ items.id }}" name="item_price_{{ items.id }}" value="{{ items.price | number:2 }}" data-itemid="{{ items.id }}" onClick="this.select();" onkeypress="return IsNumeric(event);" ondrop="return false;" onpaste="return false;" style="max-width:80px;padding:5px;border-radius: 20px;border:2px solid #ddd;">
 														<?php else : ?>
-															{{ items.price | formatDecimal:2 }}
+															{{ items.price | number:2 }}
 														<?php endif; ?>
 													</td>
 													<td class="product-subtotal">
-														{{ items.subTotal | formatDecimal:2 }}
+														{{ items.subTotal | number:2 }}
 													</td>
 													<td class="product-delete text-red" ng-click="removeItemFromInvoice($index, items.id)">
 														<span class="fa fa-close"></span>
@@ -364,7 +364,7 @@ if ($order_printer_ids) {
 														<?php echo $language->get('label_total'); ?>
 													</td>
 													<td class="text-right" width="20%">
-														{{ totalAmount  | formatDecimal:2 }}
+														{{ totalAmount  | number:2 }}
 													</td>
 												</tr>
 												<tr class="row2 pay-top">
@@ -386,7 +386,7 @@ if ($order_printer_ids) {
 														<?php echo $language->get('label_total_payable'); ?>
 													</td>
 													<td class="text-right">
-														{{ totalPayable  | formatDecimal:2 }}
+														{{ totalPayable  | number:2 }}
 													</td>
 												</tr>
 											</tbody>

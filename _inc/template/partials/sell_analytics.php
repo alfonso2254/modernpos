@@ -57,7 +57,7 @@ $(function() {
           labels: labels,
           datasets: [
               {
-                  label: "Sells",
+                  label: "Ventas",
                   borderColor: "#27CDF7",
                   borderWidth: "1",
                   backgroundColor: "#27CDF7",
@@ -65,7 +65,7 @@ $(function() {
                   data: sellData
               },
               {
-                  label: "Received",
+                  label: "Recibido",
                   borderColor: "#27CDF7",
                   borderWidth: "1",
                   backgroundColor: "#00A65A",
@@ -73,7 +73,7 @@ $(function() {
                   data: receivedData
               },
               {
-                  label: "Profit",
+                  label: "Ganancias",
                   borderColor: "#f39c12",
                   borderWidth: "1",
                   backgroundColor: "#f39c12",

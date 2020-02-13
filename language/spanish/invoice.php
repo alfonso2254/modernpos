@@ -18,7 +18,7 @@ $_['text_supplier_due_paid_title']						= 'Informe pagado por el proveedor';
 $_['text_supplier_due_paid_sub_title']					= 'Detalles del informe de pago vencido del proveedor';
 
 //label
-$_['label_due']											= 'Due';
+$_['label_due']											= 'Deuda';
 $_['label_vat_reg_no']									= 'IVA Reg';
 $_['label_gst_reg_no']									= 'GST Reg';
 $_['label_order_tax']									= 'Impuesto de pedido';

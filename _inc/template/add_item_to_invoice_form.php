@@ -40,13 +40,13 @@ $language->load('pos');
 								<input type="hidden" name="item['{{ items.item_id ? items.item_id : items.group_id }}'][category_id]" value="{{ items.categoryId }}">
 								<input type="hidden" name="item['{{ items.item_id ? items.item_id : items.group_id }}'][sup_id]" value="{{ items.supId }}">
 								<input type="hidden" name="item['{{ items.item_id ? items.item_id : items.group_id }}'][item_name]" value="{{ items.item_name }}">
-								<input type="hidden" name="item['{{ items.item_id ? items.item_id : items.group_id }}'][item_price]" value="{{ items.item_price  | formatDecimal:2 }}">
+								<input type="hidden" name="item['{{ items.item_id ? items.item_id : items.group_id }}'][item_price]" value="{{ items.item_price  | number:2 }}">
 								<input type="hidden" name="item['{{ items.item_id ? items.item_id : items.group_id }}'][item_quantity]" value="{{ items.item_quantity }}">
-								<input type="hidden" name="item['{{ items.item_id ? items.item_id : items.group_id }}'][item_total]" value="{{ items.item_total  | formatDecimal:2 }}">
+								<input type="hidden" name="item['{{ items.item_id ? items.item_id : items.group_id }}'][item_total]" value="{{ items.item_total  | number:2 }}">
 								{{ $index+1 }}
 							</td>
 							<td class="w-70">{{ items.item_name }} (x{{ items.item_quantity }})</td>
-							<td class="text-right w-20">{{ items.item_total  | formatDecimal:2 }}</td>
+							<td class="text-right w-20">{{ items.item_total  | number:2 }}</td>
 						</tr>
 					</tbody>
 					<tfoot>
@@ -55,7 +55,7 @@ $language->load('pos');
 								<?php echo $language->get('label_subtotal'); ?>
 							</th>
 							<input type="hidden" name="sub-total" value="{{ order.subtotal }}">
-							<td class="text-right w-40">{{ order.subtotal  | formatDecimal:2 }}</td>
+							<td class="text-right w-40">{{ order.subtotal  | number:2 }}</td>
 						</tr>
 						<tr>
 							<th class="text-right w-60"  colspan="2">
@@ -63,21 +63,21 @@ $language->load('pos');
 							</th>
 							<input type="hidden" name="discount-type" value="{{ order.discount_type }}">
 							<input type="hidden" name="discount-amount" value="{{ order.discount_type  == 'percentage' ? _percentage(order.payable_amount, order.discount_amount) : order.discount_amount }}">
-							<td class="text-right w-40" >{{ order.discount_type  == 'percentage' ? (_percentage(order.payable_amount, order.discount_amount) | formatDecimal:2) : (order.discount_amount | formatDecimal:2) }}</td>
+							<td class="text-right w-40" >{{ order.discount_type  == 'percentage' ? (_percentage(order.payable_amount, order.discount_amount) | number:2) : (order.discount_amount | number:2) }}</td>
 						</tr>
 						<tr>
 							<th class="text-right w-60" colspan="2">
 								<?php echo $language->get('label_tax'); ?>
 							</th>
 							<input type="hidden" name="tax-amount" value="{{ order.tax_amount }}">
-							<td class="text-right w-40">{{ order.tax_amount  | formatDecimal:2 }}</td>
+							<td class="text-right w-40">{{ order.tax_amount  | number:2 }}</td>
 						</tr>
 						<tr>
 							<th class="text-right w-60" colspan="2">
 								<?php echo $language->get('label_previous_due'); ?>
 							</th>
 							<input type="hidden" name="previous-due" value="{{ order.previous_due }}">
-							<td class="text-right w-40">{{ order.previous_due  | formatDecimal:2 }}</td>
+							<td class="text-right w-40">{{ order.previous_due  | number:2 }}</td>
 						</tr>
 						<tr>
 							<th class="text-right w-60" colspan="2">
@@ -85,13 +85,13 @@ $language->load('pos');
 								<small>({{ order.total_items }} items)</small>
 							</th>
 							<input type="hidden" name="payable-amount" value="{{ order.payable_amount }}">
-							<td class="text-right w-40">{{ order.payable_amount | formatDecimal:2 }}</td>
+							<td class="text-right w-40">{{ order.payable_amount | number:2 }}</td>
 						</tr>
 
 						<!-- Payments start -->
 						<tr class="success" ng-repeat="payments in order.payments">
 							<th class="text-right w-60" colspan="2">{{ payments.name }} <i>on</i> {{ payments.created_at }} <small><i>by {{ payments.by }}</i></small></th>
-							<td class="text-right w-40">{{ payments.amount | formatDecimal:2 }}</td>
+							<td class="text-right w-40">{{ payments.amount | number:2 }}</td>
 						</tr>
 						<!-- Payments end -->
 
@@ -100,12 +100,12 @@ $language->load('pos');
 								<?php echo $language->get('label_due'); ?>
 							</th>
 							<input type="hidden" name="due-amount" value="{{ order.due }}">
-							<td class="text-right w-40">{{ order.due | formatDecimal:2 }}</td>
+							<td class="text-right w-40">{{ order.due | number:2 }}</td>
 						</tr>
 
 						<tr class="warning">
 							<th class="text-right w-60" colspan="2">Balance</th>
-							<td class="text-right w-40">{{ order.balance | formatDecimal:2 }}</td>
+							<td class="text-right w-40">{{ order.balance | number:2 }}</td>
 						</tr>
 
 						<tr ng-show="order.invoice_not" class="active">

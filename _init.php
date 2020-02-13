@@ -1,6 +1,6 @@
 <?php
 	// $tmezone should be at line 3 
-	$timezone = 'Africa/Accra';
+	$timezone = 'America/Caracas';
 
 // date_default_timezone_set($timezone);
 if(function_exists('date_default_timezone_set')) date_default_timezone_set($timezone);

@@ -10,8 +10,9 @@
 	$_['text_delete_instruction']				= '¿Qué se debe hacer con el contenido que pertenece al cliente?';
 	$_['text_delete_success']					= 'Cliente eliminado exitosamente';
 	$_['text_total_invoice']					= 'factura total';
-	$_['text_due']								= 'Due';
+	$_['text_due']								= 'Deuda total';
 	$_['text_total_buying']						= 'Compra total';
+	$_['button_transaction_list']				= 'Lista de transacciones';
 
 	//label
 	$_['label_delete_customer_with_invoice']	= 'Eliminar con todos los datos';

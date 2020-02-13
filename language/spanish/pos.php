@@ -17,7 +17,7 @@
 	$_['label_discount']							= 'Descuento';
 	$_['label_total_payable']						= 'Importe a pagar';
 	$_['label_qunatity']							= 'Cantidad';
-	$_['label_due']									= 'Due';
+	$_['label_due']									= 'Deuda';
 	$_['label_add_to_cart']							= 'Añadir a la cesta';
 	$_['label_order_tax']							= 'Impuesto de pedido';
 

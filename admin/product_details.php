@@ -309,7 +309,7 @@ $(function() {
           labels: labels,
           datasets: [
               {
-                  label: "Selling",
+                  label: "Venta",
                   borderColor: "#27CDF7",
                   borderWidth: "1",
                   backgroundColor: "#27CDF7",
@@ -317,7 +317,7 @@ $(function() {
                   data: sellData
               },
               {
-                  label: "Buying",
+                  label: "Compra",
                   borderColor: "#27CDF7",
                   borderWidth: "1",
                   backgroundColor: "#00A65A",

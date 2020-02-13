@@ -32,13 +32,13 @@ $language->load('pos'); ?>
 										<input type="hidden" name="product-item['{{ items.id }}'][category_id]" value="{{ items.categoryId }}">
 										<input type="hidden" name="product-item['{{ items.id }}'][sup_id]" value="{{ items.supId }}">
 										<input type="hidden" name="product-item['{{ items.id }}'][item_name]" value="{{ items.name }}">
-										<input type="hidden" name="product-item['{{ items.id }}'][item_price]" value="{{ items.price  | formatDecimal:2 }}">
+										<input type="hidden" name="product-item['{{ items.id }}'][item_price]" value="{{ items.price  | number:2 }}">
 										<input type="hidden" name="product-item['{{ items.id }}'][item_quantity]" value="{{ items.quantity }}">
-										<input type="hidden" name="product-item['{{ items.id }}'][item_total]" value="{{ items.subTotal  | formatDecimal:2 }}">
+										<input type="hidden" name="product-item['{{ items.id }}'][item_total]" value="{{ items.subTotal  | number:2 }}">
 										{{ $index+1 }}
 									</td>
 									<td class="w-70">{{ items.name }} (x{{ items.quantity }})</td>
-									<td class="text-right w-20">{{ items.subTotal | formatDecimal:2 }}</td>
+									<td class="text-right w-20">{{ items.subTotal | number:2 }}</td>
 								</tr>
 							</tbody>
 							<tfoot>
@@ -47,7 +47,7 @@ $language->load('pos'); ?>
 										<?php echo $language->get('label_subtotal'); ?>
 									</th>
 									<input type="hidden" name="sub-total" value="{{ totalAmount }}">
-									<td class="text-right w-40">{{ totalAmount | formatDecimal:2 }}</td>
+									<td class="text-right w-40">{{ totalAmount | number:2 }}</td>
 								</tr>
 								<tr>
 									<th class="text-right w-60"  colspan="2">
@@ -55,49 +55,49 @@ $language->load('pos'); ?>
 									</th>
 									<input type="hidden" name="discount-amount" value="{{ discountType  == 'percentage' ? _percentage(totalAmount, discountAmount) : discountAmount }}">
 									<input type="hidden" name="discount-type" value="{{ discountType }}">
-									<td class="text-right w-40" >{{ discountType  == 'percentage' ? (_percentage(totalAmount, discountAmount) | formatDecimal:2) : (discountAmount | formatDecimal:2) }}</td>
+									<td class="text-right w-40" >{{ discountType  == 'percentage' ? (_percentage(totalAmount, discountAmount) | number:2) : (discountAmount | number:2) }}</td>
 								</tr>
 								<tr>
 									<th class="text-right w-60" colspan="2">
 										<?php echo $language->get('label_tax_amount'); ?>
 									</th>
-									<input type="hidden" name="tax-amount" value="{{ taxAmount | formatDecimal:2 }}">
-									<td class="text-right w-40">{{ taxAmount | formatDecimal:2 }}</td>
+									<input type="hidden" name="tax-amount" value="{{ taxAmount | number:2 }}">
+									<td class="text-right w-40">{{ taxAmount | number:2 }}</td>
 								</tr>
 								<tr>
 									<th class="text-right w-60" colspan="2">
 										<?php echo $language->get('label_previous_due'); ?>
 									</th>
 									<input type="hidden" name="previous-due" value="{{ dueAmount }}">
-									<td class="text-right w-40">{{ dueAmount  | formatDecimal:2 }}</td>
+									<td class="text-right w-40">{{ dueAmount  | number:2 }}</td>
 								</tr>
 								<tr>
 									<th class="text-right w-60" colspan="2">
 										<?php echo $language->get('label_payable_amount'); ?>
 										<small>({{ totalItem }} items)</small>
 									</th>
-									<input type="hidden" name="payable-amount" value="{{ totalPayable | formatDecimal:2 }}">
-									<td class="text-right w-40">{{ totalPayable  | formatDecimal:2 }}</td>
+									<input type="hidden" name="payable-amount" value="{{ totalPayable | number:2 }}">
+									<td class="text-right w-40">{{ totalPayable  | number:2 }}</td>
 								</tr>
 								<tr ng-show="done">
 									<th class="text-right w-60" colspan="2">
 										<?php echo $language->get('label_paid_amount'); ?>({{ paymentMethod }})
 									</th>
 									<input type="hidden" name="paid-amount" value="{{ paidAmount }}">
-									<td class="text-right w-40">{{ paidAmount  | formatDecimal:2 }}</td>
+									<td class="text-right w-40">{{ paidAmount  | number:2 }}</td>
 								</tr>
 								<tr ng-show="done">
 									<th class="text-right w-60" colspan="2">
 										<?php echo $language->get('label_due'); ?>
 									</th>
 									<input type="hidden" name="due-amount" value="{{ balance }}">
-									<td class="text-right w-40">{{ balance | formatDecimal:2 }}</td>
+									<td class="text-right w-40">{{ balance | number:2 }}</td>
 								</tr>
 								<tr ng-show="done">
 									<th class="text-right w-60" colspan="2">
 										<?php echo $language->get('label_change'); ?>
 									</th>
-									<td class="text-right w-40">{{ change | formatDecimal:2 }}</td>
+									<td class="text-right w-40">{{ change | number:2 }}</td>
 								</tr>
 								<tr><td colspan="3">&nbsp;</td></tr>
 								<tr ng-show="invoiceNote" class="active">

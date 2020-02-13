@@ -1060,7 +1060,7 @@ angularApp.filter('strReplace', function () {
 // start format decimal
 // ====================
 // usage
-// {{some_text | formatDecimal:2}}
+// {{some_text | number:2}}
 angularApp.filter("formatDecimal", function () {
     return function (value, limit) {
         if (!value) return "0.00";
